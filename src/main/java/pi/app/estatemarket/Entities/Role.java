@@ -4,9 +4,10 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Set;
 
-@Entity(name = "consumer_role")
+@Entity(name = "Role")
 @Getter
 @Setter
 @ToString
@@ -15,11 +16,20 @@ import java.util.Set;
 public class Role implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int idRole;
-    private String roleName;
-
-    @OneToMany(mappedBy = "part")
-    private Set<User> listUsers;
+    @Column(name="role_id")
+    private int roleId;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "description")
+    private String description;
+    @Column(name = "date_created")
+    private Date dateCreated;
+    @Column(name = "date_modified")
+    private Date dateModified;
+    @Column(name = "permissions")
+    private String permissions;
+    @OneToMany(mappedBy = "role")
+    private Set<User> listOfUsers;
 
 
 }
