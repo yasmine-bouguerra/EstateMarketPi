@@ -20,7 +20,7 @@ public class RoleController {
     private final IRoleService roleService;
 
     @GetMapping
-    public List<RoleDTO> getAllUsers() {
+    public List<RoleDTO> getAllRoles() {
         return roleService.getAllRoles();
     }
     @PostMapping("add")
