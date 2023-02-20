@@ -1,9 +1,15 @@
 package pi.app.estatemarket.dto;
 
-import java.util.Date;
+import lombok.*;
 
+import java.util.Date;
+@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class RoleDTO {
-    private int roleId;
+    private long roleId;
     private String name;
     private String description;
     private Date dateCreated;
